@@ -1,0 +1,43 @@
+<h1>Main#show</h1>
+<p>El parametro es <%= @variable %> </p>
+<h1><%= @titulo %></h1>
+<p><%= @contenido %></p>
+
+
+<form action="<%= main_store_path  %>" >
+<input type="text" name="valor"> </>
+<button type="submit">Enviar</button>
+</form>
+
+<h3>store</h3>
+<%= form_tag( main_store_path) do  %>
+<div><%= submit_tag "save" %></div>
+<% end %>
+
+<h3>save</h3>
+<%= form_tag( main_save_path, method: "put") do  %>
+<div>
+<%= label_tag(:valo, "valor")  %>
+<%= text_field_tag(:valo,"valores") %>
+</div>
+<div>
+<%= label_tag :attcheck, "Acepto"  %>
+<%= check_box_tag :attcheck, 1,  true  %><br />
+<%= label_tag :attcheck, "No acepto"  %>
+<%= check_box_tag :attcheck  %><br />
+</div>
+<h3>radios</h3>
+<div>
+<br />
+<%= radio_button_tag :radioval, "si" %>
+<%= label_tag :radioval_si, "acepto"    %>
+<br />
+<%= radio_button_tag :radioval, "no" %>
+<%= label_tag :radioval_no, "No me gusta"    %>
+
+</div>
+
+<div><%= submit_tag "save" %></div>
+<% end %>
+
+
