@@ -1,0 +1,7 @@
+<%= form_with scope: @dato, url: perfil_egresados_new_post_path do |f| %>
+ <p>
+ <label>Pefil de egresado</label> <br>
+ <%= f.text_area :perfileg_desc %>
+ </p>
+ <%= f.submit "Enviar", disable_with: 'Submiting...' %>
+<% end %>

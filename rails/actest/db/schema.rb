@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_234714) do
+ActiveRecord::Schema.define(version: 2020_10_08_225528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "perfil_egresados", primary_key: "perfil_egresado_id", id: :integer, default: -> { "nextval('perfil_egresado_perfil_egresado_id_seq'::regclass)" }, force: :cascade do |t|
-    t.text "perfil", null: false
+  create_table "asignaturas", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "forma_areas", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "perfil_egresado", primary_key: "perfileg_id", id: :serial, force: :cascade do |t|
+    t.text "perfileg_desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "productos", force: :cascade do |t|

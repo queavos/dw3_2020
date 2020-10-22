@@ -1,0 +1,15 @@
+
+<table border="1">
+<tr>
+<th>ID</th><th>Perfil</th><th colspan="2"><a href="<%= perfil_egresados_new_path  %> "> Nuevo</a></th>
+</tr>
+
+<% @datos.each do |dato|  %>
+<tr>
+<td><%= dato.perfileg_id %></td>
+<td><%= dato.perfileg_desc %></td>
+<td><a href="<%= perfil_egresados_edit_path(dato.perfileg_id)  %>">Editar</a></td>
+<td><%= link_to "Borrar", perfil_egresados_delete_path(dato.perfileg_id), method: :delete %> </td>
+</tr>
+<% end %>
+<table>

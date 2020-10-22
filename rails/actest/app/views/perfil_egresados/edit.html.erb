@@ -1,0 +1,9 @@
+<%= form_with scope: @dato , url: perfil_egresados_update_path, method: :put do |f| %>
+
+ <%= f.hidden_field :perfileg_id %>
+ <p>
+ <label>Pefil de egresado</label> <br>
+ <%= f.text_area :perfileg_desc %>
+ </p>
+ <%= f.submit "Enviar", disable_with: 'Submiting...'  %>
+<% end %>
