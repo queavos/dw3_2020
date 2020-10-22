@@ -10,19 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_225528) do
+ActiveRecord::Schema.define(version: 2020_10_22_221030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "asignaturas", force: :cascade do |t|
+  create_table "asignaturas", primary_key: "ASIGN_ID", id: :bigint, default: -> { "nextval('asignaturas_id_seq'::regclass)" }, force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "FAREAS_ID"
+    t.string "ASIGN_NOMBRE"
+    t.string "ASIGN_CODIGO"
+    t.integer "ASIGN_HS_SEM"
+    t.text "ASIGN_SENTIDO"
+    t.bigint "FormaArea_id"
+    t.index ["FormaArea_id"], name: "index_asignaturas_on_FormaArea_id"
   end
 
-  create_table "forma_areas", force: :cascade do |t|
+  create_table "forma_areas", primary_key: "FAREAS_ID", id: :bigint, default: -> { "nextval('forma_areas_id_seq'::regclass)" }, force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "FAREAS_DESCRIP"
+    t.text "FAREAS_OBJETIVOS"
   end
 
   create_table "perfil_egresado", primary_key: "perfileg_id", id: :serial, force: :cascade do |t|

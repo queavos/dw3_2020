@@ -1,0 +1,2 @@
+module FormaAreasHelper
+end

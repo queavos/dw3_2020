@@ -1,0 +1,14 @@
+<h1>FormaAreas#edit</h1>
+<p>Find me in app/views/forma_areas/edit.html.erb</p>
+<%= form_with scope: @item, url: aformacion_actualizar_path, method: :PUT do |f| %>
+ <%= f.hidden_field  :FAREAS_ID %>   
+ <p>
+ <label>Nombre</label> <br>
+ <%= f.text_field :FAREAS_DESCRIP %>
+ </p>
+ <p>
+ <label>Objetivos</label> <br>
+ <%= f.text_area :FAREAS_OBJETIVOS %>
+ </p>
+ <%= f.submit "Enviar", disable_with: 'Submiting...' %>
+<% end %>

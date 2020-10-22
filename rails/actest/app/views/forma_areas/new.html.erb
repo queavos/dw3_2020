@@ -1,0 +1,13 @@
+<h1>FormaAreas#new</h1>
+<p>Find me in app/views/forma_areas/new.html.erb</p>
+<%= form_with scope: @item, url: aformacion_crear_path do |f| %>
+ <p>
+ <label>Nombre</label> <br>
+ <%= f.text_field :FAREAS_DESCRIP %>
+ </p>
+ <p>
+ <label>Objetivos</label> <br>
+ <%= f.text_area :FAREAS_OBJETIVOS %>
+ </p>
+ <%= f.submit "Enviar", disable_with: 'Submiting...' %>
+<% end %>

@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+  #rutas areas de forna....
+  get 'aformacion', to:'forma_areas#index'
+  get 'aformacion/nuevo', to:'forma_areas#new' 
+  post 'aformacion/nuevo', to:'forma_areas#create', as: 'aformacion_crear' 
+  get 'aformacion/:id/editar', to:'forma_areas#edit', as: 'aformacion_editar' 
+  put 'aformacion/editar', to:'forma_areas#update', as: 'aformacion_actualizar'  
+  delete 'aformacion/:id/borrar',   to:'forma_areas#destroy', as: 'aformacion_borrar'  
+  # rutas de prueba
   get 'pruebas/addPruebas'
   get 'pruebas/addProducto'
   get 'pruebas/addPerfil'
-
+# rutas de perfiles
   get 'perfil_egresados', to: 'perfil_egresados#index'   
   get 'perfil_egresados/new'
   get 'perfil_egresados/edit/:id' , to: 'perfil_egresados#edit', as: 'perfil_egresados_edit'

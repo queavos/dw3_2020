@@ -1,5 +1,5 @@
 class FormaArea < ApplicationRecord
     self.table_name="forma_areas"
-    self.primary_key="fareas_id"
-    has_many Asignatura, foreign_key: "fareas_id"
+    self.primary_key="FAREAS_ID"
+    has_many :Asignatura, foreign_key: "FAREAS_ID"
 end
